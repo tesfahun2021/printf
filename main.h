@@ -1,36 +1,24 @@
-#ifndef MAIN_H
-#define MAIN_H
-
+#ifndef our_printf
+#define our_printf
+#include <stdio.h>
 #include <stdarg.h>
-#include <stddef.h>
-#include <stdlib.h>
-
 /**
- * struct structprint - structure containing
- * @q: the location and method to translate data to characters.
- * @u: print function for specific type.
+ * struct specifier - struct specifier
+ * @valid: the valid character.
+ * @f: the functions associated.
  *
- * Return: int
  */
-typedef struct structprint
+typedef struct specifier
 {
-	char *q;
-	int (*u)(char *format, va_list);
-} structype;
-
-int _putchar(char ch);
-int _puts(char *string);
-int printc(char *format, va_list);
-int printstr(char *format, va_list);
-int (*driver(char *format))(char *format, va_list);
-int _printf(char *format, ...);
-int printint(char *format, va_list pa);
-int integer(int number);
-int contadordigit(int number);
-int _abs(int number);
-int printpercent(char *format, va_list pa);
-int printhex(char *format, va_list);
-int printHEX(char *format, va_list);
-int printocta(char *format, va_list);
-int print_unsign(char *format, va_list);
+	char *valid;
+	int (*f)(va_list);
+} spec;
+int _printf(const char *format, ...);
+int print_c(va_list args);
+int print_s(va_list args);
+int print_d(va_list args);
+int print_i(va_list args);
+int _putchar(char c);
+int print_percent(va_list args);
+int (*get_func(char x))(va_list args);
 #endif
