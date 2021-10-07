@@ -36,7 +36,7 @@ int print_hex(va_list h)
 {
 	unsigned long num = va_arg(h, unsigned int);
 
-	return (printStr(decToHexa(num)));
+	return (printStr(convert(num, 16)));
 }
 
 /**
@@ -49,7 +49,7 @@ int print_oct(va_list o)
 {
 	unsigned long num = va_arg(o, unsigned int);
 
-	return (printStr(decToOctal(num)));
+	return (printStr(convert(num, 8)));
 }
 
 /**
@@ -60,9 +60,9 @@ int print_oct(va_list o)
  */
 int print_pointer(va_list p)
 {
-	long int num = va_arg(p, unsigned int);
+	unsigned long num = va_arg(p, unsigned long);
 
 	_putchar('0');
 	_putchar('x');
-	return (2 + printStr(decToHexa(num)));
+	return (2 + printStr(convert(num, 16)));
 }

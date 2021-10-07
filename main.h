@@ -24,11 +24,11 @@ int print_pointer(va_list o);
 int print_num(long n);
 int _putchar(char c);
 int print_percent(va_list args);
-int (*get_fun(char x))(va_list args);
 int print_hex(va_list h);
 int print_Hex(va_list h);
 int printStr(char *str);
+int (*get_fun(char x))(va_list args);
 char *string_toupper(char *s);
-char *decToHexa(unsigned long n);
-char *decToOctal(unsigned long n);
+char *convert(unsigned long num, int base);
+
 #endif
