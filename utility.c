@@ -46,9 +46,9 @@ char *decToHexa(unsigned long n)
 
 		temp = n % 16;
 		if (temp < 10)
-			hexaDeciNum[i] = temp + 48;
+			hexaDeciNum[i] = temp + '0';
 		else
-			hexaDeciNum[i] = temp + 55;
+			hexaDeciNum[i] = temp + 'a' - 10;
 		i++;
 		n = n / 16;
 	}

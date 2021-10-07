@@ -53,14 +53,16 @@ int print_oct(va_list o)
 }
 
 /**
- * print_oct - prints a ocatal
+ * print_pointer - prints a ocatal
  * @p: arglist
  *
  * Return: number of printed character
  */
 int print_pointer(va_list p)
 {
-	unsigned long num = va_arg(p, unsigned int);
+	long int num = va_arg(p, unsigned int);
 
-	return (printStr(decToOctal(num)));
+	_putchar('0');
+	_putchar('x');
+	return (2 + printStr(decToHexa(num)));
 }
