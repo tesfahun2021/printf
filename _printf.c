@@ -4,9 +4,10 @@
 #include "main.h"
 #include <stddef.h>
 /**
- * _printf - recreates the printf function
- * @format: string with format specifier
- * Return: number of characters printed
+ * _printf - prints formatted string
+ * @format: list of argument types passed to the function
+ *
+ * Return: number of printed character
  */
 int _printf(const char *format, ...)
 {
@@ -20,24 +21,21 @@ int _printf(const char *format, ...)
 		i = 0;
 		if (format[0] == '%' && format[1] == '\0')
 			return (-1);
-		while (format != NULL && format[i] != '\0')
+		while (format[i] != '\0')
 		{
 			if (format[i] == '%')
 			{
 				if (format[i + 1] == '%')
-				{
 					count += _putchar(format[i]);
-					i += 2;
-				}
 				else
 				{
-					m = get_func(format[i + 1]);
+					m = get_fun(format[i + 1]);
 					if (m)
 						count += m(args);
 					else
 						count = _putchar(format[i]) + _putchar(format[i + 1]);
-					i += 2;
 				}
+				i += 2;
 			}
 			else
 			{

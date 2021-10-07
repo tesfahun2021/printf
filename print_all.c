@@ -24,7 +24,7 @@ int print_s(va_list args)
 	char *str;
 
 	i = 0;
-	str = va_arg(args, char*);
+	str = va_arg(args, char *);
 	if (str == NULL)
 		str = "(null)";
 	while (str[i] != '\0')
@@ -60,40 +60,15 @@ int print_percent(va_list args)
  */
 int print_d(va_list args)
 {
-
-	unsigned int absolute, aux, countnum, count;
-	int n;
-
-	count = 0;
-	n = va_arg(args, int);
-		if (n < 0)
-		{
-			absolute = (n * -1);
-			count += _putchar('-');
-		}
-		else
-			absolute = n;
-
-	aux = absolute;
-	countnum = 1;
-	while (aux > 9)
-	{
-		aux /= 10;
-		countnum *= 10;
-	}
-	while (countnum >= 1)
-	{
-		count += _putchar(((absolute / countnum) % 10) + '0');
-		countnum /= 10;
-	}
-	return (count);
+	return (print_num(va_arg(args, int)));
 }
-/**
- * print_i - prints integer
- * @args: integer argument
- * Return: the decimal function
- */
 
+/**
+ * print_i - prints an int
+ * @num: arg list
+ *
+ * Return: number of printed character
+ */
 int print_i(va_list args)
 {
 	return (print_d(args));
