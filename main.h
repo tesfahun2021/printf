@@ -20,6 +20,7 @@ int print_d(va_list args);
 int print_i(va_list args);
 int print_u(va_list num);
 int print_oct(va_list o);
+int print_pointer(va_list o);
 int print_num(long n);
 int _putchar(char c);
 int print_percent(va_list args);

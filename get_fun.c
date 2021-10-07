@@ -18,15 +18,13 @@ int (*get_fun(char x))(va_list)
 		{"x", print_hex},
 		{"X", print_Hex},
 		{"o", print_oct},
+		{"p", print_pointer},
 		{NULL, NULL}};
 
 	while (arr[i].t)
 	{
 		if (x == arr[i].t[0])
-		{
 			return (arr[i].f);
-			break;
-		}
 		i++;
 	}
 	return (NULL);

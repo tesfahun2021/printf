@@ -14,35 +14,6 @@ int print_u(va_list num)
 }
 
 /**
- * print_num - prints an int
- * @n: int to print
- *
- * Return: number of printed character
- */
-int print_num(long n)
-{
-	int i = 0;
-
-	/* If number is smaller than 0, put a - sign and change number to positive */
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-		i++;
-	}
-	/* Remove the last digit and recur */
-	if (n / 10)
-	{
-		i++;
-		print_num(n / 10);
-	}
-	/* Print the last digit */
-	_putchar(n % 10 + '0');
-
-	return (i + 1);
-}
-
-/**
  * print_Hex - prints a uppercased hexadecimal
  * @h: arglist
  *
@@ -64,18 +35,32 @@ int print_Hex(va_list h)
 int print_hex(va_list h)
 {
 	unsigned long num = va_arg(h, unsigned int);
+
 	return (printStr(decToHexa(num)));
 }
 
 /**
  * print_oct - prints a ocatal
- * @h: arglist
+ * @o: arglist
  *
  * Return: number of printed character
  */
 int print_oct(va_list o)
 {
 	unsigned long num = va_arg(o, unsigned int);
+
+	return (printStr(decToOctal(num)));
+}
+
+/**
+ * print_oct - prints a ocatal
+ * @p: arglist
+ *
+ * Return: number of printed character
+ */
+int print_pointer(va_list p)
+{
+	unsigned long num = va_arg(p, unsigned int);
 
 	return (printStr(decToOctal(num)));
 }

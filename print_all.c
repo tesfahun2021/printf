@@ -52,7 +52,7 @@ int print_d(va_list args)
 
 /**
  * print_i - prints an int
- * @num: arg list
+ * @args: arg list
  *
  * Return: number of printed character
  */

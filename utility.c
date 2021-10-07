@@ -74,7 +74,7 @@ char *decToOctal(unsigned long n)
 
 	while (n != 0)
 	{
-		// storing remainder in octal array
+		/* storing remainder in octal array */
 		octal[i] = '0' + n % 8;
 		n = n / 8;
 		i++;
@@ -119,4 +119,3 @@ int printStr(char *str)
 	}
 	return (i);
 }
-
