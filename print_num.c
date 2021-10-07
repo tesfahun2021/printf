@@ -8,23 +8,28 @@
  */
 int print_num(long n)
 {
-	int i = 0;
+	unsigned int absolute, aux, countnum, count;
 
-	/* If number is smaller than 0, put a - sign and change number to positive */
+	count = 0;
 	if (n < 0)
 	{
-		_putchar('-');
-		n = -n;
-		i++;
+		absolute = (n * -1);
+		count += _putchar('-');
 	}
-	/* Remove the last digit and recur */
-	if (n / 10)
-	{
-		i++;
-		print_num(n / 10);
-	}
-	/* Print the last digit */
-	_putchar(n % 10 + '0');
+	else
+		absolute = n;
 
-	return (i + 1);
+	aux = absolute;
+	countnum = 1;
+	while (aux > 9)
+	{
+		aux /= 10;
+		countnum *= 10;
+	}
+	while (countnum >= 1)
+	{
+		count += _putchar(((absolute / countnum) % 10) + '0');
+		countnum /= 10;
+	}
+	return (count);
 }
