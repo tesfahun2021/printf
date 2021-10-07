@@ -15,6 +15,8 @@ int (*get_fun(char x))(va_list)
 		{"d", print_d},
 		{"u", print_u},
 		{"i", print_i},
+		{"x", print_hex},
+		{"X", print_Hex},
 		{NULL, NULL}};
 	while (arr[i].t)
 	{

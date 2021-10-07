@@ -20,20 +20,7 @@ int print_c(va_list args)
  */
 int print_s(va_list args)
 {
-	int i, count = 0;
-	char *str;
-
-	i = 0;
-	str = va_arg(args, char *);
-	if (str == NULL)
-		str = "(null)";
-	while (str[i] != '\0')
-	{
-		_putchar(str[i]);
-		i++;
-		count++;
-	}
-	return (count);
+	return (printStr(va_arg(args, char *)));
 }
 /**
  * print_percent - pass the percent sing

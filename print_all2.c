@@ -41,3 +41,29 @@ int print_num(long n)
 
 	return (i + 1);
 }
+
+/**
+ * print_Hex - prints a uppercased hexadecimal
+ * @h: arglist
+ *
+ * Return: number of printed character
+ */
+int print_Hex(va_list h)
+{
+	unsigned long num = va_arg(h, unsigned int);
+
+	return (printStr(string_toupper(decToHexa(num))));
+}
+
+/**
+ * print_hex - prints a lowercased hexadecimal
+ * @h: arglist
+ *
+ * Return: number of printed character
+ */
+int print_hex(va_list h)
+{
+	unsigned long num = va_arg(h, unsigned int);
+	return (printStr(decToHexa(num)));
+}
+

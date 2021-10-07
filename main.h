@@ -27,6 +27,6 @@ int print_hex(va_list h);
 int print_Hex(va_list h);
 int printStr(char *str);
 char *string_toupper(char *s);
-char *decToHexa(int n);
+char *decToHexa(unsigned long n);
 
 #endif
