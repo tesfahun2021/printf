@@ -23,7 +23,7 @@ int print_Hex(va_list h)
 {
 	unsigned long num = va_arg(h, unsigned int);
 
-	return (printStr(string_toupper(decToHexa(num))));
+	return (printStr(string_toupper(convert(num, 16))));
 }
 
 /**

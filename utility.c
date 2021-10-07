@@ -24,65 +24,6 @@ void rev_string(char *s)
 		s[len - 1 - i] = temp;
 	}
 }
-/**
- * decToHexa - convert decimal to hexadecimal
- * @n: number to convert
- *
- * Return: converted string
- */
-char *decToHexa(unsigned long n)
-{
-	int i = 0; /* counter for hexadecimal number array */
-	/* allocate char array to store hexadecimal number */
-	char *hexaDeciNum = (char *)malloc(sizeof(char) * 15);
-
-	if (!hexaDeciNum)
-		return (NULL);
-
-	while (n != 0)
-	{
-		/* temporary variable to store remainder */
-		int temp = 0;
-
-		temp = n % 16;
-		if (temp < 10)
-			hexaDeciNum[i] = temp + '0';
-		else
-			hexaDeciNum[i] = temp + 'a' - 10;
-		i++;
-		n = n / 16;
-	}
-	hexaDeciNum[i] = '\0';
-	rev_string(hexaDeciNum);
-	return (hexaDeciNum);
-}
-
-/**
- * decToOctal - convert decimal to octal
- * @n: number to convert
- *
- * Return: converted string
- */
-char *decToOctal(unsigned long n)
-{
-	int i = 0; /* counter for octal number array */
-	/* allocate char array to store octal number */
-	char *octal = (char *)malloc(sizeof(char) * 15);
-
-	if (!octal)
-		return (NULL);
-
-	while (n != 0)
-	{
-		/* storing remainder in octal array */
-		octal[i] = '0' + n % 8;
-		n = n / 8;
-		i++;
-	}
-	octal[i] = '\0';
-	rev_string(octal);
-	return (octal);
-}
 
 /**
  * string_toupper - changes all lowercase letters of a string to uppercase.
