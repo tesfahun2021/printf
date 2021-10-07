@@ -17,7 +17,9 @@ int (*get_fun(char x))(va_list)
 		{"i", print_i},
 		{"x", print_hex},
 		{"X", print_Hex},
+		{"o", print_oct},
 		{NULL, NULL}};
+
 	while (arr[i].t)
 	{
 		if (x == arr[i].t[0])

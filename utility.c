@@ -58,6 +58,33 @@ char *decToHexa(unsigned long n)
 }
 
 /**
+ * decToOctal - convert decimal to octal
+ * @n: number to convert
+ *
+ * Return: converted string
+ */
+char *decToOctal(unsigned long n)
+{
+	int i = 0; /* counter for octal number array */
+	/* allocate char array to store octal number */
+	char *octal = (char *)malloc(sizeof(char) * 15);
+
+	if (!octal)
+		return (NULL);
+
+	while (n != 0)
+	{
+		// storing remainder in octal array
+		octal[i] = '0' + n % 8;
+		n = n / 8;
+		i++;
+	}
+	octal[i] = '\0';
+	rev_string(octal);
+	return (octal);
+}
+
+/**
  * string_toupper - changes all lowercase letters of a string to uppercase.
  * @s: string
  * Return: uppercase string

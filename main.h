@@ -19,6 +19,7 @@ int print_s(va_list args);
 int print_d(va_list args);
 int print_i(va_list args);
 int print_u(va_list num);
+int print_oct(va_list o);
 int print_num(long n);
 int _putchar(char c);
 int print_percent(va_list args);
@@ -28,5 +29,5 @@ int print_Hex(va_list h);
 int printStr(char *str);
 char *string_toupper(char *s);
 char *decToHexa(unsigned long n);
-
+char *decToOctal(unsigned long n);
 #endif
